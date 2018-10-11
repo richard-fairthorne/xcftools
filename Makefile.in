@@ -34,7 +34,7 @@ CFLAGS			= @CFLAGS@
 LDFLAGS			= @LDFLAGS@ @LIBICONV@
 LIBS			= @LIBS@
 
-INSTALL			= @INSTALL@ -D
+INSTALL			= @INSTALL@ 
 INSTALL_PROGRAM		= @INSTALL_PROGRAM@
 INSTALL_DATA		= @INSTALL_DATA@
 
@@ -90,7 +90,7 @@ testscale$e: testscale.$o
 install: all
 	for p in $(BINARIES) ; do \
 	  case $$p in xcfview) strip= ;; *) strip=-s ;; esac ; \
-	  $(INSTALL_PROGRAM) $$strip $$p \
+	  $(INSTALL_PROGRAM) $$p \
 	    $(DESTDIR)$(bindir)/`echo $$p | $(SED) $(program_transform_name)` \
 	    || exit 1 ;\
         done
