@@ -188,7 +188,7 @@ manpo/%.po: manpo/manpages.pot
 
 manpo/stamp: $(patsubst %,manpo/%.po,$(MANLINGUAS))
 	if ! make -q manpo/manpages.pot ; then \
-	touch manpo/manpages.pot ; touch $^ ; fi
+	touch manpo/manpages.pot ; fi
 	touch $@
 
 manpo/all: manpo/stamp $(MANPAGES)
